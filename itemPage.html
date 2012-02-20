@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<title> "EagleEye" </title>
+		<meta name="viewport" 
+			content="width=768; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+		<script type="text/javascript" src="util.js"></script>
+		<script type="text/javascript" 
+			src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+		<link type="text/css" href="css/custom-theme/jquery-ui-1.8.12.custom.css" rel="stylesheet" />
+		<script src="touch-scroll.js"></script>
+		<script type="text/javascript">
+		  $(document).ready(function() {
+			  $('#buyPopover').hide();
+			  $('#savePopover').hide();
+  			  $('#optionsPopover').hide();
+  			  $('#optionsSellerPopover').hide();
+  			  $('#optionsNearPopover').hide();
+  			  $('#optionsSharePopover').hide();
+			  $('#backButton').click(function(){
+				  history.go(-1);
+			  });
+			  $('#buyButton').click(function(){
+				  $('#buyPopover').fadeToggle();
+				  $('#savePopover').fadeOut();
+	  			  $('#optionsPopover').fadeOut();
+				  $('#optionsNearPopover').fadeOut();
+	  			  $('#optionsSharePopover').fadeOut();
+				  $('#optionsSellerPopover').fadeOut();			  });
+			  $('#saveButton').click(function(){
+				  $('#savePopover').fadeToggle();
+				  $('#buyPopover').fadeOut();
+	  			  $('#optionsPopover').fadeOut();				  
+				  $('#optionsNearPopover').fadeOut();
+	  			  $('#optionsSharePopover').fadeOut();
+				  $('#optionsSellerPopover').fadeOut();			  });
+			  $('#saveOptionsButton').click(function(){
+				  $('#savePopover').fadeToggle();
+				  $('#buyPopover').fadeOut();
+	  			  $('#optionsPopover').fadeOut();				  
+			  	  alert("Item saved.");
+			 });
+			  $('#optionsButton').click(function(){
+				  $('#optionsPopover').fadeToggle();
+				  $('#buyPopover').fadeOut();
+				  $('#savePopover').fadeOut();
+	  			  $('#optionsSharePopover').fadeOut();
+				  $('#optionsNearPopover').fadeOut();
+				  $('#optionsSellerPopover').fadeOut();			  });
+			  $('#nearButton').click(function(){
+				  //$('#optionsPopover').fadeOut();
+				  $('#buyPopover').fadeOut();
+				  $('#savePopover').fadeOut();
+				  $('#optionsNearPopover').show();
+			  });
+			  $('#shareButton').click(function(){
+				  $('#optionsSharePopover').show();
+			  });
+			  $('#sellerButton').click(function(){
+				  //$('#optionsPopover').fadeOut();
+				  $('#buyPopover').fadeOut();
+				  $('#savePopover').fadeOut();
+				  $('#optionsSellerPopover').show();
+			  });
+			  $('#optionsSellerPopover').click(function(){
+				  $('#optionsPopover').fadeOut();
+				  $('#buyPopover').fadeOut();
+				  $('#savePopover').fadeOut();
+				  $('#optionsSellerPopover').fadeOut();
+  				  alert("Seller Information Saved");
+			  });
+			  $('#optionsNearPopover').click(function(){
+				  window.location = "mapPage.html";
+				  $('#optionsNearPopover').fadeOut();
+			  });
+			  $('#helpButton').click(function(){
+			  	alert("EagleEye compiled detailed information about your selected product. Various functions are available to you in the top menu in addition to the action buttons next to the product name and description. Save the product to your wish list, Buy the product in person or online are just the beginning. Under More Options you can locate the nearest store or find out if the seller is credible. ");
+			  	});
+			  $('#buyOptionsButton').click(function(){
+				  $('#buyPopover').fadeOut();
+			  });
+			  var expanded = 0;
+  			$('#expand').click(function(){
+  				if ((expanded % 2) == 0) {
+	  				$('#expand').animate({top: '480px'});
+	  				expanded++;
+  				}
+  				else {
+	  				$('#expand').animate({top: '765px'});
+	  				expanded++;
+  				}
+  			});
+			$('#scrollable').touchScroll();
+			/*$('#collectionMenu').fadeOut();
+			$('#collectionMenuScroll').touchScroll();
+			$('#collectionButton').click(function() {
+				$('#collectionMenu').fadeToggle();
+			});*/
+		  });
+		</script>
+	</head>
+	<body onLoad="main()">
+		<!-- BACKGROUND -->
+		<div id="background">
+			<img src="page_images/004_-_selected_product_detail.png" class"stretch" alt="" />
+		</div>
+		<!-- BACK BUTTON -->
+		<div id="backButton" style="position:absolute; width:67px; height:42px; top:17px; left:0px"></div>
+		<!-- BOTTOM BAR BUTTONS -->
+		<div id="bottomNavBar" style="position:absolute; z-index:1; width:768px; height:50px; top:975px; left:0px">
+		<img src="page_images/homebar.png">
+		
+
+		<div id="collectionButton" style="position:absolute; width:90px; height:50px; top:0px; left:242px">
+			<a href="collectionPage.html">link</a>		  </div>
+		<div id="cameraButton" style="position:absolute; width:90px; height:50px; top:0px; left:340px">
+			<a href="cameraPage.html">link</a>
+		  </div>
+		<div id="pictureButton" style="position:absolute; width:90px; height:50px; top:0px; left:438px">
+			<a href="picturePage.html">link</a>		  </div>
+		<div id="searchButton" style="position:absolute; width:90px; height:50px; top:0px; left:533px">
+			<a href="searchPage.html">link</a>		  </div>
+		<div id="homeButton" style="position:absolute; width:90px; height:50px; top:0px; left:146px">
+			<a href="homePage.html">.</a>			</div>
+		</div>
+		<!-- BUTTONS -->
+		<div id="helpButton" style="position:absolute; width:47px; height:41px; top:18px; left:721px"></div>
+		<div id="preAdvisorButton" style="position:absolute; width:151px; height:96px; top:240px; left:572px">
+			<a href="preAdvisorPage.html">.</a>		</div>
+		<div id="learnButton" style="position:absolute; width:216px; height:94px; top:612px; left:505px">
+			<a href="learnPage.html">.</a>		</div>
+		<div id="appraisalButton" style="position:absolute; width:148px; height:96px; top:240px; left:406px">
+			<a href="appraisalPage.html">.</a>		</div>
+		<!-- TOP BUTTONS -->
+		<div id="saveButton" style="position:absolute; width:73px; height:44px; top:17px; left:68px"></div>
+		<div id="savePopover">
+			<img src="page_images/save_this_product_to_popover.png" style="position:absolute; top: 59px; left:2px;"/>
+			<div id="saveOptionsButton" style="position:absolute; width:271px; height:43px; top:132px; left:7px"></div>	
+			<div id="saveOptionsButton2" style="position:absolute; width:271px; height:43px; top:182px; left:7px"></div>	
+			<div id="saveOptionsButton3" style="position:absolute; width:271px; height:43px; top:232px; left:7px"></div>	
+			<div id="saveOptionsButton4" style="position:absolute; width:271px; height:43px; top:282px; left:7px"></div>	
+			<div id="saveOptionsButton5" style="position:absolute; width:271px; height:43px; top:332px; left:7px"></div>		
+		</div>
+		<!-- ACCORDION -->
+		<div style="position:absolute; z-index:0; width 768px; top: 765px; left:0px; overflow-y:hidden;" id="expand"><img style="position:absolute; padding-bottom:10px; z-index: 1;" src="page_images/004_-_similar_items_menubar.png"/><img style="padding-top:44px;" id="scrollable"  src="page_images/004_-_similar_items_tab.png"></div>
+		
+		
+		<!-- POPOVERS -->
+		<div id="buyButton" style="position:absolute; width:316px; height:97px; top:354px; left:406px"></div>
+		<div id="buyPopover">
+		  <img src="page_images/buy_this_product_popover.png" style="position:absolute; top: 449px; left:422px;"/>
+		  <div  style="position:absolute; width:272px; height:47px; top:519px; left:426px">
+				<a id="buyOptionsButton" href="externPage.html">.</a>		  </div>
+		  <div  style="position:absolute; width:272px; height:47px; top:569px; left:426px">
+				<a id="buyOptionsButton" href="externPage.html">.</a>		  </div>		
+	</div>
+		<div id="optionsButton" style="position:absolute; width:49px; height:44px; top:17px; left:670px"></div>
+		<div id="optionsPopover">
+			<img  src="page_images/more_actions_popover.png" style="position:absolute; top: 60px; left:478px;"/>
+			<div id="shareButton" style="position:absolute; width:275px; height:46px; top:130px; left:482px"></div>
+			<div id="nearButton" style="position:absolute; width:275px; height:46px; top:180px; left:482px"></div>
+			<div id="sellerButton" style="position:absolute; width:274px; height:46px; top:228px; left:482px"></div>
+	</div>
+	    <img id="optionsSharePopover" src="page_images/share_popover.png" style="position:absolute; top: 60px; left:478px;"/>
+		<img id="optionsNearPopover" src="page_images/find_nearest_store.png" style="position:absolute; top: 60px; left:478px;"/>
+	    <img id="optionsSellerPopover" src="page_images/enter_seller_info_popover.png" style="position:absolute; top: 60px; left:478px;"/>
+	</body>
+</html>

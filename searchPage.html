@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<title> "EagleEye" </title>
+		<meta name="viewport" 
+			content="width=768; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+		<script type="text/javascript" src="util.js"></script>
+		<script type="text/javascript" 
+			src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script src="touch-scroll.js"></script>
+		<script type="text/javascript">
+		  $(document).ready(function() {
+			  $('#backButton').click(function(){
+				  history.go(-1);
+			  });
+			  $('#geolocateButton').click(function(){
+				  $("#zipcode option[selected]").removeAttr("selected");
+				  $("#zipcode option[value='geo']").attr("selected", "selected");
+			  });
+			  $('#helpButton').click(function(){
+			  	alert("EagleEye searches across all types of online stores to find your item. Enter your criteria to ensure you get only the results you want.");
+			  	});
+			/*$('#collectionMenu').hide();
+			$('#collectionMenuScroll').touchScroll();
+			$('#collectionButton').click(function() {
+				$('#collectionMenu').toggle();
+			});*/
+		  });
+		</script>
+	</head>
+	<body onLoad="main()">
+		<!-- BACKGROUND -->
+		<div id="background">
+			<img src="page_images/006_-_advanced_search.png" class"stretch" alt="" />
+		</div>
+		<!-- BACK BUTTON -->
+		<div id="backButton" style="position:absolute; width:72px; height:42px; top:17px; left:0px"></div>
+		<!-- BOTTOM BAR BUTTONS -->
+		<div id="bottomNavBar" style="position:absolute; width:768px; height:50px; top:975px; left:0px">
+		<img src="page_images/homebar.png">
+		
+
+		<div id="collectionButton" style="position:absolute; width:90px; height:50px; top:0px; left:242px">
+			<a href="collectionPage.html">link</a>		  </div>
+		<div id="cameraButton" style="position:absolute; width:90px; height:50px; top:0px; left:340px">
+			<a href="cameraPage.html">link</a>
+		  </div>
+		<div id="pictureButton" style="position:absolute; width:90px; height:50px; top:0px; left:438px">
+			<a href="picturePage.html">link</a>		  </div>
+		<div id="searchButton" style="position:absolute; width:90px; height:50px; top:0px; left:533px">
+			<a href="searchPage.html">link</a>		  </div>
+		<div id="homeButton" style="position:absolute; width:90px; height:50px; top:0px; left:146px">
+			<a href="homePage.html">.</a>			</div>
+		</div>
+
+		
+		<!-- TOP BAR BUTTONS -->
+		<div id="helpButton" style="position:absolute; width:55px; height:41px; top:18px; left:713px"></div>
+		<!-- SEARCH FIELD -->
+		<input style="position:absolute; width:376px; height:63px; top:272px; left:181px" type="text" placeholder="Enter an item"/>
+		<!-- YEAR -->
+		<select style="position:absolute; width:135px; height:50px; top:562px; left:240px">
+			<option selected="selected">Any</option>
+			<option>1900</option>
+			<option>1901</option>
+			<option>1902</option>
+			<option>1903</option>
+	</select>
+		<select style="position:absolute; width:135px; height:50px; top:562px; left:425px">
+			<option selected="selected">Any</option>
+			<option>2008</option>
+			<option>2009</option>
+			<option>2010</option>
+			<option>2011</option>
+	</select>
+		
+		<!-- PRICE -->
+		<select style="position:absolute; width:135px; height:50px; top:495px; left:240px">
+			<option selected="selected">Any</option>
+			<option>$0.00</option>
+			<option>$10.00</option>
+			<option>$20.00</option>
+			<option>$30.00</option>
+	</select>
+		<select style="position:absolute; width:135px; height:50px; top:495px; left:425px">
+			<option selected="selected">Any</option>
+			<option>$100.00</option>
+			<option>$200.00</option>
+			<option>$300.00</option>
+			<option>$400.00</option>
+	</select>
+		<!-- CATEGORY -->
+		<select style="position:absolute; width:300px; height:50px; top:630px; left:240px">
+			<option selected="selected">All</option>
+			<option>Toy Cars</option>
+			<option>Antique Toys</option>
+			<option>Model Cars</option>
+			<option>Collectibles</option>
+	</select>
+		<!-- CONDITION -->
+		<select style="position:absolute; width:300px; height:50px; top:695px; left:240px">
+			<option selected="selected">All</option>
+			<option>Poor</option>
+			<option>Good</option>
+			<option>Great</option>
+			<option>Mint</option>
+	</select>
+		<!-- SELLER -->
+		<select style="position:absolute; width:300px; height:50px; top:762px; left:240px">
+			<option selected="selected">All</option>
+			<option>Bob Smith</option>
+			<option>Jane Tory</option>
+			<option>Tim Porch</option>
+			<option>Allie Kelt</option>
+	</select>
+		<!-- DISTANCE -->
+		<select style="position:absolute; width:145px; height:50px; top:830px; left:240px">
+			<option>5 Miles</option>
+			<option>10 Miles</option>
+			<option>25 Miles</option>
+			<option>50 Miles</option>
+			<option selected="selected">100 Miles</option>
+	</select>
+		
+		<select id="zipcode" style="position:absolute; width:142px; height:50px; top:830px; left:522px">
+			<option selected="selected">ZIP code</option>
+			<option>02152</option>
+			<option>02153</option>
+			<option>02154</option>
+			<option value="geo">02155</option>
+	</select>
+
+		<!-- GEOLOCATE BUTTON -->
+		<div id="geolocateButton" style="position:absolute; width:52px; height:54px; top:828px; left:667px"></div>
+		<!-- GO BUTTON -->
+		<div id="goButton" style="position:absolute; width:114px; height:75px; top:274px; left:604px">
+			<a href="resultsPage.html">.</a>		</div> 
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<title> "EagleEye" </title>
+		<meta name="viewport" 
+			content="width=768; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+		<script type="text/javascript" src="util.js"></script>
+		<script type="text/javascript" 
+			src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+		<link type="text/css" href="css/custom-theme/jquery-ui-1.8.12.custom.css" rel="stylesheet" />	
+		<script src="touch-scroll.js"></script>
+		<script type="text/javascript">
+		  $(document).ready(function() {
+			  $('#backButton').click(function(){
+				  history.go(-1);
+			  });
+			  $('#helpButton').click(function(){
+			  	alert("EagleEye will automatically keep track of the recent items you've analyzed for you. Additionally you can save items to your Favorites and Wish List. Have a specific collection you want to manage? Go ahead and create a custom collection using the Add New button in the top menu and you'll be able to save any product you see to the custom collection in just a touch of a button.");
+		  	});
+			$('#accordion').accordion();
+			$('.scrollable').touchScroll();
+		  });
+		</script>
+	</head>
+	<body onLoad="main()">
+		<!-- BACKGROUND -->
+		<div id="background">
+			<img src="page_images/005-1_-1_-_collections.png" class"stretch" alt="" />
+		</div>
+		<!-- ACCORDION -->
+		<div id="accordion" style="position:absolute; width:768px; height:635px; top:58px; left:0px;">
+			<h3><a class="aHead" href="#">Recently Analyzed Items</a></h3>
+			    <div><div style="height:635px; overflow:scroll;"><a href="itemPage.html"><img class="scrollable" src="page_images/005-1_-1_-_recently_analyzed_items_corkboard.png"/></a></div></div>
+			<h3><a class="aHead" href="#">Favorites</a></h3>
+			    <div><div style="height:635px; overflow:scroll;"><a href="itemPage.html"><img class="scrollable" src="page_images/005-1_-1_-_favorites_corkboard.png"/></a></div></div>
+			<h3><a class="aHead" href="#">Wish List</a></h3>
+			    <div><div style="height:635px; overflow:scroll;"><a href="itemPage.html"><img class="scrollable" src="page_images/005-1_-1_-_wishlist_corkboard.png"/></a></div></div>
+			<h3><a class="aHead" href="#">Matchbox Cars</a></h3>
+			    <div><div style="height:635px; overflow:scroll;"><a href="itemPage.html"><img class="scrollable" src="page_images/005-1_-1_-_matchbox_cars_corkboard.png"/></a></div></div>
+			<h3><a class="aHead" href="#">Star Wars Collectibles</a></h3>
+			    <div><div style="height:635px; overflow:scroll;"><a href="itemPage.html"><img class="scrollable" src="page_images/005-1_-1_-_star_wars_collection_corkboard.png"/></a></div></div>
+		</div>
+		<!-- BACK BUTTON -->
+		<div id="backButton" style="position:absolute; width:72px; height:42px; top:17px; left:0px"></div>
+		<!-- BOTTOM BAR BUTTONS -->
+		<div id="bottomNavBar" style="position:absolute; width:768px; height:50px; top:975px; left:0px">
+		<img src="page_images/homebar.png">
+		
+
+		<div id="collectionButton" style="position:absolute; width:90px; height:50px; top:0px; left:242px">
+			<a href="collectionPage.html">link</a>		  </div>
+		<div id="cameraButton" style="position:absolute; width:90px; height:50px; top:0px; left:340px">
+			<a href="cameraPage.html">link</a>
+		  </div>
+		<div id="pictureButton" style="position:absolute; width:90px; height:50px; top:0px; left:438px">
+			<a href="picturePage.html">link</a>		  </div>
+		<div id="searchButton" style="position:absolute; width:90px; height:50px; top:0px; left:533px">
+			<a href="searchPage.html">link</a>		  </div>
+		<div id="homeButton" style="position:absolute; width:90px; height:50px; top:0px; left:146px">
+			<a href="homePage.html">.</a>			</div>
+		</div>
+
+		<!-- TOP BAR BUTTONS -->
+		<div id="helpButton" style="position:absolute; width:55px; height:41px; top:18px; left:713px"></div>
+	
+		<!--  
+		<div id="collectionButton" style="position:absolute; width:121px; height:46px; top:23px; left:0px"></div>
+		<div id="collectionMenu" style="position:absolute; width:332px; height:364px; top:65px; overflow-y: hidden;">
+			<img style="position:absolute; z-index:2;" src="CollectionMenuHeader.png" />
+			<div style="position:absolute; z-index:0;" id="collectionMenuScroll"><img src="Scroll.png" /></div>
+		</div>-->
+		
+	</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<title> "EagleEye" </title>
+		<meta name="viewport" 
+			content="width=768; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+		<script type="text/javascript" src="util.js"></script>
+		<script type="text/javascript" 
+			src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script src="touch-scroll.js"></script>
+		<script type="text/javascript">
+		  $(document).ready(function() {
+		  	$('#searchBox').keyup(function(e){
+			  	if (e.keyCode == 13){
+				  	window.location = $('#results').attr('href');
+			  	}
+		  	});
+		  	$('#helpButton').click(function(){
+			  	alert("Use the camera to take a picture for EagleEye to analyze, or select a previously saved photo to analyze. \nYou can also search for items online, just Ask EagleEye!");
+		  	});
+		  	$('#helpTextButton').click(function(){
+			  	alert("Use the camera to take a picture for EagleEye to analyze, or select a previously saved photo to analyze. \nYou can also search for items online, just Ask EagleEye!");
+		  	});
+			/*$('#collectionMenu').hide();
+			$('#collectionMenuScroll').touchScroll();
+			$('#collectionButton').click(function() {
+				$('#collectionMenu').toggle();
+			});*/
+		  });
+		</script>
+	</head>
+	<body onLoad="main()">
+		<!-- BACKGROUND -->
+		<div id="background">
+			<img src="page_images/001_-_home_new_user.png" class"stretch" alt="" />
+		</div>
+		
+		<!-- BOTTOM BAR BUTTONS -->
+		<!-- BOTTOM BAR BUTTONS -->
+		<div id="bottomNavBar" style="position:absolute; width:768px; height:50px; top:975px; left:0px">
+		<img src="page_images/homebar.png">
+		
+
+		<div id="collectionButton" style="position:absolute; width:90px; height:50px; top:0px; left:242px">
+			<a href="collectionPage.html">link</a>		  </div>
+		<div id="cameraButton" style="position:absolute; width:90px; height:50px; top:0px; left:340px">
+			<a href="cameraPage.html">link</a>
+		  </div>
+		<div id="pictureButton" style="position:absolute; width:90px; height:50px; top:0px; left:438px">
+			<a href="picturePage.html">link</a>		  </div>
+		<div id="searchButton" style="position:absolute; width:90px; height:50px; top:0px; left:533px">
+			<a href="searchPage.html">link</a>		  </div>
+
+		</div>
+
+		<!-- TOP BAR BUTTONS -->
+		<div id="helpButton" style="position:absolute; width:55px; height:41px; top:17px; left:713px"></div>
+
+		<!-- Other buttons -->
+		<div id="bigCameraButton" style="position:absolute; width:127px; height:128px; left:331px; top:120px;">
+			<a href="cameraPage.html">.</a>		</div>
+<div id="bigCameraButtonOnSticky" style="position:absolute; width:186px; height:187px; left:29px; top:769px;">
+			<a href="cameraPage.html">.</a>		</div>
+		
+		<div id="bigPictureButton" style="position:absolute; width:127px; height:128px; left:477px; top:120px;">
+			<a href="picturePage.html">.</a>		</div>
+		<div id="bigPictureButtonOnSticky" style="position:absolute; width:186px; height:187px; left:554px; top:568px;">
+			<a href="picturePage.html">.</a>		</div>
+		
+		<div id="searchButton" style="position:absolute; width:115px; height:75px; top:403px; left:624px">
+			<a href="resultsPage.html">link</a>		</div>
+		
+		<!-- SEARCH FIELD -->
+		<input id="searchBox" style="position:absolute; width:377px; height:62px; top:307px; left:336px" type="text" placeholder="Enter an item"/>
+		<a href="resultsPage.html" id="results">.</a>
+
+		<div id="advancedSearchButton" style="position:absolute; width:229px; height:39px; top:399px; left:334px">
+			<a href="searchPage.html">.</a>
+		</div>
+		
+	</body>
+</html>

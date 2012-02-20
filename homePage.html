@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<title> "EagleEye" </title>
+		<meta name="viewport" 
+			content="width=768; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+		<script type="text/javascript" src="util.js"></script>
+		<script type="text/javascript" 
+			src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script src="touch-scroll.js"></script>
+		<script type="text/javascript">
+		  $(document).ready(function() {
+			$('#helpButton').click(function(){
+			  	alert("Use the camera to take a picture for EagleEye to analyze, or select a previously saved photo to analyze. \nYou can also search for items online, just Ask EagleEye!");
+		  	});
+		  	$('#helpTextButton').click(function(){
+			  	alert("Use the camera to take a picture for EagleEye to analyze, or select a previously saved photo to analyze. \nYou can also search for items online, just Ask EagleEye!");
+		  	});
+		  	var expanded = 0;
+  			$('.expandControl').click(function(){
+  				if ((expanded % 2) == 0) {
+	  				$('#expand').animate({top: '930px'});
+	  				expanded++;
+  				}
+  				else {
+	  				$('#expand').animate({top: '535px'});
+	  				expanded++;
+  				}
+  			});
+			$('#scrollable').touchScroll();
+			/*$('#collectionMenu').hide();
+			$('#collectionMenuScroll').touchScroll();
+			$('#collectionButton').click(function() {
+				$('#collectionMenu').toggle();
+			});*/
+		  });
+		</script>
+	</head>
+	<body onLoad="main()">
+		<!-- BACKGROUND -->
+		<div id="background">
+			<img src="page_images/001b_-_home_return_user.png" class"stretch" alt="" />
+		</div>
+		
+		<!-- BOTTOM BAR BUTTONS -->
+		<div id="bottomNavBar" style="position:absolute; z-index:1; width:768px; height:50px; top:975px; left:0px">
+		<img src="page_images/homebar.png">
+		
+
+		<div id="collectionButton" style="position:absolute; width:90px; height:50px; top:0px; left:242px">
+			<a href="collectionPage.html">link</a>		  </div>
+		<div id="cameraButton" style="position:absolute; width:90px; height:50px; top:0px; left:340px">
+			<a href="cameraPage.html">link</a>
+		  </div>
+		<div id="pictureButton" style="position:absolute; width:90px; height:50px; top:0px; left:438px">
+			<a href="picturePage.html">link</a>		  </div>
+		<div id="searchButton" style="position:absolute; width:90px; height:50px; top:0px; left:533px">
+			<a href="searchPage.html">link</a>		  </div>
+		<div id="homeButton" style="position:absolute; width:90px; height:50px; top:0px; left:146px">
+			<a href="homePage.html">.</a>			</div>
+		</div>
+
+		
+		<!-- TOP BAR BUTTONS -->
+		<div id="helpButton" style="position:absolute; width:55px; height:41px; top:17px; left:713px"></div>
+		<!-- ITEM BUTTONS -->
+		<div id="itemButton" style="position:absolute; width:768px; height:475px; top:477px; left:0px">
+			<a href="itemPage.html">.</a>
+		</div>	
+		
+		<!-- Other buttons -->
+		<div id="bigCameraButton" style="position:absolute; width:127px; height:128px; left:331px; top:120px;">
+			<a href="cameraPage.html">.</a>		</div>
+        <div id="bigPictureButton" style="position:absolute; width:127px; height:128px; left:477px; top:120px;">
+			<a href="picturePage.html">.</a>		</div>
+		<div id="searchButton" style="position:absolute; width:115px; height:75px; top:403px; left:624px">
+			<a href="resultsPage.html">link</a>		</div>
+		
+		<!-- SEARCH FIELD -->
+		<input id="searchBox" style="position:absolute; width:377px; height:62px; top:307px; left:336px" type="text" placeholder="Enter an item"/>
+		<a href="resultsPage.html" id="results">.</a>
+
+		<div id="advancedSearchButton" style="position:absolute; width:229px; height:39px; top:399px; left:334px">
+			<a href="searchPage.html">.</a>
+		</div>
+
+		<!-- ACCORDION -->
+		<div style="position:absolute; left:0px; top:491px; width:768px; height: 400px;" id="howto"><img src="page_images/001b_-_how_to_get_started.png"/></div>
+		<div class="expandControl" style="position:absolute; left:0px; width: 768px; height: 45px; top: 494px;"></div>
+		<div style="position:absolute; z-index:0; width 768px; top: 535px; left:0px; overflow-y:hidden;" class="expandControl" id="expand"><img style="position:absolute; padding-bottom:10px; z-index: 1;" src="page_images/001b_-_recently_analyzed_items_menubar.png"/><img style="padding-top:44px;" id="scrollable"  src="page_images/001b_-_recently_analyzed_items_corkboard.png"></div>
+	</body>
+</html>

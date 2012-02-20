@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<title> "EagleEye" </title>
+		<meta name="viewport" 
+			content="width=768; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+		<script type="text/javascript" src="util.js"></script>
+		<script type="text/javascript" 
+			src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script src="touch-scroll.js"></script>
+		<script type="text/javascript">
+		  $(document).ready(function() {
+			  $('#backButton').click(function(){
+				  history.go(-1);
+			  });
+			/*$('#collectionMenu').hide();
+			$('#collectionMenuScroll').touchScroll();
+			$('#collectionButton').click(function() {
+				$('#collectionMenu').toggle();
+			});*/
+		  });
+		</script>
+	</head>
+	<body onLoad="main()">
+		<!-- BACKGROUND -->
+		<div id="background">
+			<img src="page_images/externalSite.png" class"stretch" alt="" />
+		</div>
+		<!-- BACK BUTTON -->
+		<div id="backButton" style="position:absolute; width:65px; height:45px; top:18px; left:0px"></div>
+		<!-- BOTTOM BAR BUTTONS -->
+
+		<!-- TOP BAR BUTTONS -->
+		<!--  
+		<div id="collectionButton" style="position:absolute; width:121px; height:46px; top:23px; left:0px"></div>
+		<div id="collectionMenu" style="position:absolute; width:332px; height:364px; top:65px; overflow-y: hidden;">
+			<img style="position:absolute; z-index:2;" src="CollectionMenuHeader.png" />
+			<div style="position:absolute; z-index:0;" id="collectionMenuScroll"><img src="Scroll.png" /></div>
+		</div>-->
+        </body>
+</html>
